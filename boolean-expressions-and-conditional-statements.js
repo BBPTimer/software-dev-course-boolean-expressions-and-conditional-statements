@@ -42,6 +42,31 @@ if (choice === "mountains" && hasTorch) {
   console.log("You get lost and wander aimlessly.");
 }
 
+const hasSword = true;
+const hasCompass = false;
+
+console.log("You come across a sleeping dragon.");
+const choice2 = readline.question("Do you 'proceed' or 'turn back'?");
+
+if (choice2 === "proceed" && (hasSword || hasCompass)) {
+  console.log("You survive!");
+    if (hasSword) {
+      console.log("You defeat the dragon with your sword.");
+    }
+    else {
+      console.log("You use your compass to navigate around the dragon.");
+    }
+}
+else if (choice2 === "proceed" && !(hasSword || hasCompass)) {
+  console.log("Without a sword or compass to aid, the dragon overcomes you.");
+}
+else if (choice2 == "turn back" && hasCompass) {
+  console.log("You safely navigate back to your origin.");
+}
+else {
+  console.log("You get lost and wander aimlessly.");
+}
+
 /* 
 
 Add Customization and expand the game:
